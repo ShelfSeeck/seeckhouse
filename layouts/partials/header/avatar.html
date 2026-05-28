@@ -1,0 +1,16 @@
+{{ $avatar := resources.GetMatch .Site.Params.avatar }} 
+{{ $tiny := ($avatar.Fill "80x80 q90") }}
+
+<div class="flex-none w-20 h-20 rounded-full ring-2 ring-yellow-400 p-[2px] bg-neutral-200 dark:bg-gray-900">
+  <div class="w-full h-full rounded-full overflow-hidden">
+    <a href="{{ .Site.BaseURL }}">
+      <img
+        src="{{ $avatar.RelPermalink }}"
+        width="{{ $avatar.Width }}"
+        height="{{ $avatar.Height }}"
+        class="w-full h-full object-cover rounded-full"
+        alt="{{ .Site.Title }}"
+      />
+    </a>
+  </div>
+</div>

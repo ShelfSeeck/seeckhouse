@@ -1,9 +1,9 @@
 baseURL = 'http://example.org/'
-copyright = "2026-{year} ShelfSeeck copyright reserved"
+copyright = "2026-{year} ShelfSeeck "
 languageCode = 'zh-CN'
 defaultContentLanguage = 'cn'
 theme = 'enchanted-lowkey'
-title = "seeck's House"
+title = "SEECK's House"
 enableRobotsTXT = true
 summaryLength = 20
 paginate = 6

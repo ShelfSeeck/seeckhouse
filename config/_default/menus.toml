@@ -4,11 +4,12 @@
     url = "/"
     weight = 1
 
-#[[main]]
-#    identifier = "about"
-#    name = "About me"
-#    url = "/about"
-#    weight = 2
+[[main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 2
+
 
 [[main]]
     identifier = "categories"
@@ -16,11 +17,11 @@
     url = "/categories"
     weight = 3
 
-#[[main]]
-#    identifier = "tags"
-#    name = "Tags"
-#    url = "/tags"
-#    weight = 4
+[[main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags"
+    weight = 4
 
 #[[main]]
 #    identifier = "donate"
