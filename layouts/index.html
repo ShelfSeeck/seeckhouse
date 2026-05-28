@@ -1,0 +1,26 @@
+{{ define "main" }} 
+
+<!-- 1. 展示首页内容（对应 content/_index.md 里的内容） -->
+<div class="py-2 flex flex-col gap-1">
+  <h3 class="title-small">{{ .Title }}</h3>
+</div>
+<section class="mb-10">
+  {{ .Content }} 
+</section>
+
+<hr class="my-8 border-gray-200 dark:border-gray-700">
+
+<!-- 2. 展示最新发布的 5 篇文章 -->
+<div class="mb-6">
+  <h3 class="title-small">最近发布</h3>
+</div>
+
+<section class="flex flex-col gap-10">
+  {{ range first 5 .Site.RegularPages }}
+    {{ partial "list/default" . }}
+  {{ else }}
+    <p class="text-gray-500">暂无已发布文章</p>
+  {{ end }}
+</section>
+
+{{ end }}
