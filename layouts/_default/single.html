@@ -1,0 +1,55 @@
+{{ define "main" }}
+
+<article class="flex flex-col gap-10">
+  <header class="flex flex-col gap-2">
+    <h2 class="title-large">{{ .Title }}</h2>
+
+    <div class="meta">
+      {{/* Publish date */}}
+      <time datetime="{{ .PublishDate }}" title='{{ .PublishDate.Format "Mon, Jan 2, 2006, 3:04 PM MST" }}'>
+        {{ .PublishDate.Format "02/01/2006" }} - {{ printf (i18n "estimatedReadingTime") .ReadingTime }}
+      </time>
+
+      {{/* Categories */}} 
+      {{ with (.GetTerms "categories") }} — 
+        {{ range . }}
+          <a class="categories" href="{{ .RelPermalink }}" alt="{{ .LinkTitle }}">
+            {{ .LinkTitle }}
+          </a>
+        {{ end }} 
+      {{ end }}
+    </div>
+  </header>
+
+  {{ partial "single/table-of-contents" . }}
+
+  <section>
+    {{ .Content | emojify }}
+  </section>
+
+  {{/* Article License / Copyright Container */}}
+  <div class="px-4 py-2.5 my-6 rounded-r-lg bg-gray-100 dark:bg-darkblock border-l-4 border-yellow-500 text-xs text-gray-600 dark:text-neutral-400 leading-relaxed">
+    <p class="mb-1">
+      本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener noreferrer" class="underline hover:text-yellow-600 dark:hover:text-yellow-500 font-bold">CC BY-NC-SA 4.0</a> 许可协议发布。
+    </p>
+    <p class="mb-1">
+      <strong>作者：</strong>{{ .Params.author | default .Site.Params.author | default "seeckman" }}，<strong>文章链接：</strong><a href="{{ .Permalink }}" class="underline hover:text-yellow-600 dark:hover:text-yellow-500">{{ .Permalink }}</a>
+    </p>
+  </div>
+
+  {{ partial "single/comments/index" . }}
+
+  <footer>
+    {{ with (.GetTerms "tags") }}
+      <div class="pb-14 taxonomy-list tags-list">
+      {{ range . }}
+        <a href="{{ .RelPermalink }}" alt="{{ .LinkTitle }}">
+          {{ .LinkTitle }}
+        </a>
+      {{ end }}
+      </div>
+    {{ end }}
+  </footer>
+</article>
+
+{{ end }}

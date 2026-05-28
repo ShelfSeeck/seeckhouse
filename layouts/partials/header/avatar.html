@@ -1,7 +1,7 @@
 {{ $avatar := resources.GetMatch .Site.Params.avatar }} 
 {{ $tiny := ($avatar.Fill "80x80 q90") }}
 
-<div class="flex-none w-20 h-20 rounded-full ring-2 ring-yellow-400 p-[2px] bg-neutral-200 dark:bg-gray-900">
+<div class="flex-none w-20 h-20 rounded-full ring-2 ring-yellow-400 p-[2px] bg-neutral-200 dark:bg-darkbg">
   <div class="w-full h-full rounded-full overflow-hidden">
     <a href="{{ .Site.BaseURL }}">
       <img

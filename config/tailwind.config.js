@@ -16,6 +16,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        darkbg: '#1e1f22',
+        darkblock: '#2b2d31',
+        darkborder: '#35383f',
+      },
       fontFamily: {
         'sans': ['"Maple Mono"', 'monospace', 'sans-serif'],
         'mono': ['"Maple Mono"', 'monospace'],
