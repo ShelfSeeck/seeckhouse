@@ -271,6 +271,26 @@
     @apply bg-red-100 border-red-500 text-red-900;
   }
 
+  #content .collapse-block {
+    @apply mb-5 rounded-lg border border-gray-300 dark:border-darkborder bg-gray-100 dark:bg-darkblock;
+  }
+
+  #content .collapse-block > summary {
+    @apply cursor-pointer select-none px-4 py-3 font-semibold text-gray-800 dark:text-neutral-200;
+  }
+
+  #content .collapse-block[open] > summary {
+    @apply border-b border-gray-300 dark:border-darkborder;
+  }
+
+  #content .collapse-content {
+    @apply px-4 pt-4 pb-1;
+  }
+
+  #content .collapse-content > :last-child {
+    @apply mb-0;
+  }
+
   #content .table-of-contents {
     @apply bg-gray-100 dark:bg-darkblock text-gray-700 dark:text-neutral-300 p-4 border dark:border-darkborder rounded-lg;
   }

@@ -1,0 +1,8 @@
+{{ $title := .Get 0 | default "展开内容" }}
+{{ $open := eq (.Get 1) "open" }}
+<details class="collapse-block"{{ if $open }} open{{ end }}>
+  <summary>{{ $title }}</summary>
+  <div class="collapse-content">
+    {{ .Inner | markdownify }}
+  </div>
+</details>

@@ -10,6 +10,13 @@ paginate = 6
 
 
 [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.renderHooks]
+      [markup.goldmark.renderHooks.link]
+        useEmbedded = 'always'
+
   [markup.highlight]
     anchorLineNos = false
     codeFences = true
