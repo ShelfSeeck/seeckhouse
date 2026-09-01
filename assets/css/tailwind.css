@@ -198,6 +198,10 @@
   #content a {
     @apply underline font-bold text-yellow-600 hover:text-yellow-500 dark:text-yellow-300 dark:hover:text-yellow-200;
   }
+
+  #content mark {
+    @apply bg-yellow-200 dark:bg-yellow-700 text-inherit px-0.5;
+  }
   
   #content .date {
     @apply py-2 text-sm font-semibold text-gray-400;
@@ -269,6 +273,42 @@
 
   #content .alert-box.error {
     @apply bg-red-100 border-red-500 text-red-900;
+  }
+
+  #content .callout {
+    @apply mb-5 rounded-r-lg border-l-4 border-yellow-500 bg-gray-100 dark:bg-darkblock px-4 pt-3 pb-1 text-base not-italic text-gray-700 dark:text-neutral-300;
+  }
+
+  #content .callout-title {
+    @apply mb-2 cursor-default font-semibold text-gray-900 dark:text-neutral-100;
+  }
+
+  #content details.callout > .callout-title {
+    @apply cursor-pointer select-none;
+  }
+
+  #content .callout-content > :last-child {
+    @apply mb-0;
+  }
+
+  #content .callout[data-callout="note"] {
+    @apply border-blue-500;
+  }
+
+  #content .callout[data-callout="tip"] {
+    @apply border-green-500;
+  }
+
+  #content .callout[data-callout="important"] {
+    @apply border-purple-500;
+  }
+
+  #content .callout[data-callout="warning"] {
+    @apply border-yellow-500;
+  }
+
+  #content .callout[data-callout="caution"] {
+    @apply border-red-500;
   }
 
   #content .collapse-block {

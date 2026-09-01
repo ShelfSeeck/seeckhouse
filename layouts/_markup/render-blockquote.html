@@ -1,0 +1,47 @@
+{{ $text := printf "%s" .Text }}
+{{ $customMarker := findRE `^<p>\[![^]]+\][+-]?` $text 1 }}
+
+{{ if eq .Type "alert" }}
+  {{ $title := .AlertTitle }}
+  {{ if not $title }}
+    {{ $title = .AlertType }}
+  {{ end }}
+
+  {{ if or (eq .AlertSign "+") (eq .AlertSign "-") }}
+    <details class="callout" data-callout="{{ .AlertType }}"{{ if eq .AlertSign "+" }} open{{ end }}>
+      <summary class="callout-title">{{ $title }}</summary>
+      <div class="callout-content">{{ .Text }}</div>
+    </details>
+  {{ else }}
+    <aside class="callout" data-callout="{{ .AlertType }}">
+      <p class="callout-title">{{ $title }}</p>
+      <div class="callout-content">{{ .Text }}</div>
+    </aside>
+  {{ end }}
+{{ else if $customMarker }}
+  {{ $marker := index $customMarker 0 }}
+  {{ $sign := "" }}
+  {{ if hasSuffix $marker "+" }}
+    {{ $sign = "+" }}
+  {{ else if hasSuffix $marker "-" }}
+    {{ $sign = "-" }}
+  {{ end }}
+  {{ $title := replaceRE `^<p>\[!|\][+-]?$` "" $marker }}
+  {{ $body := replace $text $marker "<p>" | safeHTML }}
+
+  {{ if $sign }}
+    <details class="callout" data-callout="custom"{{ if eq $sign "+" }} open{{ end }}>
+      <summary class="callout-title">{{ $title }}</summary>
+      <div class="callout-content">{{ $body }}</div>
+    </details>
+  {{ else }}
+    <aside class="callout" data-callout="custom">
+      <p class="callout-title">{{ $title }}</p>
+      <div class="callout-content">{{ $body }}</div>
+    </aside>
+  {{ end }}
+{{ else }}
+  <blockquote>
+    {{ .Text }}
+  </blockquote>
+{{ end }}

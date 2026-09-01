@@ -11,9 +11,15 @@ paginate = 6
 
 [markup]
   [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.extras]
+        [markup.goldmark.extensions.extras.mark]
+          enable = true
     [markup.goldmark.renderer]
       unsafe = true
     [markup.goldmark.renderHooks]
+      [markup.goldmark.renderHooks.image]
+        useEmbedded = 'always'
       [markup.goldmark.renderHooks.link]
         useEmbedded = 'always'
 
