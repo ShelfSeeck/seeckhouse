@@ -1,43 +1,4 @@
-@font-face {
-  font-family: "Iosevka Extended";
-  font-style: normal;
-  font-display: swap;
-  font-stretch: expanded;
-  font-weight: 400;
-  src: url("https://iosevka-webfonts.github.io/iosevka/WOFF2/Iosevka-Extended.woff2") format("woff2");
-  unicode-range: U+0000-024F, U+2000-206F, U+20A0-20CF, U+2190-21FF;
-}
-
-@font-face {
-  font-family: "Iosevka Extended";
-  font-style: normal;
-  font-display: swap;
-  font-stretch: expanded;
-  font-weight: 600;
-  src: url("https://iosevka-webfonts.github.io/iosevka/WOFF2/Iosevka-ExtendedSemiBold.woff2") format("woff2");
-  unicode-range: U+0000-024F, U+2000-206F, U+20A0-20CF, U+2190-21FF;
-}
-
-@font-face {
-  font-family: "Iosevka Extended";
-  font-style: normal;
-  font-display: swap;
-  font-stretch: expanded;
-  font-weight: 700;
-  src: url("https://iosevka-webfonts.github.io/iosevka/WOFF2/Iosevka-ExtendedBold.woff2") format("woff2");
-  unicode-range: U+0000-024F, U+2000-206F, U+20A0-20CF, U+2190-21FF;
-}
-
-@font-face {
-  font-family: "Iosevka Extended";
-  font-style: normal;
-  font-display: swap;
-  font-stretch: expanded;
-  font-weight: 800;
-  src: url("https://iosevka-webfonts.github.io/iosevka/WOFF2/Iosevka-ExtendedExtraBold.woff2") format("woff2");
-  unicode-range: U+0000-024F, U+2000-206F, U+20A0-20CF, U+2190-21FF;
-}
-
+@import url("https://cdn.jsdelivr.net/npm/@fontsource-variable/noto-serif-sc@5.3.0/wght.css");
 @import url("https://cdn.jsdelivr.net/npm/@fontsource/maple-mono/100.css");
 @import url("https://cdn.jsdelivr.net/npm/@fontsource/maple-mono/200.css");
 @import url("https://cdn.jsdelivr.net/npm/@fontsource/maple-mono/300.css");
@@ -48,6 +9,42 @@
 @import url("https://cdn.jsdelivr.net/npm/@fontsource/maple-mono/800.css");
 @import url("https://cdn.jsdelivr.net/npm/@fontsource/maple-mono/400-italic.css");
 
+@font-face {
+  font-family: "Iosevka Extended";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("https://iosevka-webfonts.github.io/iosevka/WOFF2/Iosevka-Extended.woff2") format("woff2");
+  unicode-range: U+0000-024F, U+2000-206F, U+20A0-20CF, U+2190-21FF;
+}
+
+@font-face {
+  font-family: "Iosevka Extended";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("https://iosevka-webfonts.github.io/iosevka/WOFF2/Iosevka-ExtendedSemiBold.woff2") format("woff2");
+  unicode-range: U+0000-024F, U+2000-206F, U+20A0-20CF, U+2190-21FF;
+}
+
+@font-face {
+  font-family: "Iosevka Extended";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url("https://iosevka-webfonts.github.io/iosevka/WOFF2/Iosevka-ExtendedBold.woff2") format("woff2");
+  unicode-range: U+0000-024F, U+2000-206F, U+20A0-20CF, U+2190-21FF;
+}
+
+@font-face {
+  font-family: "Iosevka Extended";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: url("https://iosevka-webfonts.github.io/iosevka/WOFF2/Iosevka-ExtendedExtraBold.woff2") format("woff2");
+  unicode-range: U+0000-024F, U+2000-206F, U+20A0-20CF, U+2190-21FF;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -56,8 +53,7 @@
 
   body {
     @apply bg-neutral-200 dark:bg-darkbg text-gray-700 dark:text-neutral-300 text-lg text-justify;
-    font-family: "Iosevka Extended", "Source Han Serif SC", "Noto Serif CJK SC", serif;
-    font-stretch: expanded;
+    font-family: "Iosevka Extended", "Noto Serif SC Variable", "Source Han Serif SC", "Noto Serif CJK SC", serif;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -191,7 +187,7 @@
 
 @layer utilities {  
   nav a.active {
-    @apply text-gray-900 dark:text-neutral-100;
+    @apply text-yellow-600 dark:text-yellow-300;
   }
   
   /* Content overrides */

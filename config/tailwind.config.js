@@ -22,7 +22,7 @@ module.exports = {
         darkborder: '#35383f',
       },
       fontFamily: {
-        'sans': ['"Iosevka Extended"', '"Source Han Serif SC"', '"Noto Serif CJK SC"', 'serif'],
+        'sans': ['"Iosevka Extended"', '"Noto Serif SC Variable"', '"Source Han Serif SC"', '"Noto Serif CJK SC"', 'serif'],
         'mono': ['"Maple Mono"', 'monospace'],
       },
     },
